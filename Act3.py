@@ -16,6 +16,12 @@ def get_public_ip_info():
                 print(f'Public IPv6 Address: {data["ip6"]}')
             else:
                 print('IPv6 Address not available')
+
+            loc = data.get("loc", "").split(",")
+            latitude = loc[0] if loc else "N/A"
+            longitude = loc[1] if len(loc) > 1 else "N/A"
+            print(f'Latitude: {latitude}')
+            print(f'Longitude: {longitude}')
             
             print(f'Location: {data["city"]}, {data["region"]}, {data["country"]}')
             print(f'ISP: {data["org"]}')
