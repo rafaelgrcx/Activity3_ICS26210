@@ -7,11 +7,13 @@ def get_public_ip_info():
         
         if response.status_code == 200:
             data = response.json()
-
+            
             #extract ipv4 address
             print(f'Public IPv4 Address: {data["ip"]}')
             
             # check if ipv6 is available
+            print(f'Public IPv4 Address: {data["ip"]}')
+            
             if 'ip6' in data:
                 print(f'Public IPv6 Address: {data["ip6"]}')
             else:
@@ -26,6 +28,7 @@ def get_public_ip_info():
             print(f'Location: {data["city"]}, {data["region"]}, {data["country"]}')
             print(f'ISP: {data["org"]}')
             
+
             # check if asn is available
             if 'asn' in data:
                 print(f'ASN: {data["asn"]}')
