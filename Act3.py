@@ -2,16 +2,13 @@ import requests
 
 def get_public_ip_info():
     try:
-        # Send a GET request to ipinfo.io API
         response = requests.get('https://ipinfo.io/json')
         
         if response.status_code == 200:
             data = response.json()
             
-            # Extract and display relevant information
             print(f'Public IPv4 Address: {data["ip"]}')
             
-            # Check if IPv6 is present in the response data
             if 'ip6' in data:
                 print(f'Public IPv6 Address: {data["ip6"]}')
             else:
@@ -20,7 +17,6 @@ def get_public_ip_info():
             print(f'Location: {data["city"]}, {data["region"]}, {data["country"]}')
             print(f'ISP: {data["org"]}')
             
-            # Check if 'asn' key is present before printing it
             if 'asn' in data:
                 print(f'ASN: {data["asn"]}')
             else:
