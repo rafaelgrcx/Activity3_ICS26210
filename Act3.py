@@ -13,6 +13,7 @@ def get_public_ip_info():
                 print(f'Public IPv6 Address: {data["ip6"]}')
             else:
                 print('IPv6 Address not available')
+                //hello
             
             print(f'Location: {data["city"]}, {data["region"]}, {data["country"]}')
             print(f'ISP: {data["org"]}')
