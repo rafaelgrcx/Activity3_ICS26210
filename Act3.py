@@ -15,11 +15,11 @@ def get_public_ip_info():
             if 'ip6' in data:
                 print(f'Public IPv6 Address: {data["ip6"]}')
             else:
-                print('IPv6 Address not available')
+                print('IPv6 Address cannot be found')
 
             loc = data.get("loc", "").split(",")
-            latitude = loc[0] if loc else "N/A"
-            longitude = loc[1] if len(loc) > 1 else "N/A"
+            latitude = loc[0] if loc else "Information nit available"
+            longitude = loc[1] if len(loc) > 1 else "Information not available"
             print(f'Latitude: {latitude}')
             print(f'Longitude: {longitude}')
             
