@@ -76,6 +76,13 @@ def get_public_ip_info():
     except Exception as e:
         print(f'An error occurred: {str(e)}')
 
+def log_ip_address(ip_address):
+    #implement IP history tracking by logging the IP address to a txt file
+    with open('ip_history.txt', 'a') as file:
+        file.write(f'{ip_address}\n')
+    #print a message stating that the ip address is saved for history tracking
+    print('IP Address logged for history tracking.\n')
+
 if __name__ == "__main__":
-    print("Retrieving Information...\n")
+    print("Retrieving Geolocation Information...\n")
     get_public_ip_info()
