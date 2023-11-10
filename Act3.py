@@ -83,6 +83,18 @@ def log_ip_address(ip_address):
     #print a message stating that the ip address is saved for history tracking
     print('IP Address logged for history tracking.\n')
 
+def get_continent_info(ip_address, api_key):
+    # Use ipstack.com to get continent information
+    ipstack_url = f'http://api.ipstack.com/{ip_address}?access_key={api_key}'
+    response = requests.get(ipstack_url)
+    
+    if response.status_code == 200:
+        data = response.json()
+        return data.get('continent', 'N/A')
+    else:
+        return 'N/A'
+
 if __name__ == "__main__":
     print("Retrieving Geolocation Information...\n")
     get_public_ip_info()
+
