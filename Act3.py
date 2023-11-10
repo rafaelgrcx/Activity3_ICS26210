@@ -1,5 +1,26 @@
 import requests
 
+user_database = {
+    'martha': 'user11',
+    'rain': 'user22',
+    'rafael': 'user33',
+    'gerard': 'user44',
+    'andrew': 'user55'
+}
+
+def login():
+    # Get user input for username and password
+    username_input = input('Enter your username: ')
+    password_input = input('Enter your password: ')
+
+    # Check login credentials
+    if username_input in user_database and user_database[username_input] == password_input:
+        print(f'Login successful. Welcome, {username_input}!\n')
+        return True
+    else:
+        print('Login failed. Please check your credentials.\n')
+        return False
+        
 def get_public_ip_info():
     try:
         # get request to ipinfo.io API to retrieve information
