@@ -1,19 +1,19 @@
 import requests
 
 user_database = {
-    'martha': 'user11',
-    'rain': 'user22',
-    'rafael': 'user33',
-    'gerard': 'user44',
-    'andrew': 'user55'
+    'martha': 'mrthbcy1',
+    'rain': 'rnmglq2',
+    'rafael': 'rflgrc3',
+    'gerard': 'grrdbyn4',
+    'andrew': 'ndrwclpz5'
 }
 
 def login():
-    # Get user input for username and password
+    #user input for username and password
     username_input = input('Enter your username: ')
     password_input = input('Enter your password: ')
 
-    # Check login credentials
+    #verify login credentials (user authentication)
     if username_input in user_database and user_database[username_input] == password_input:
         print(f'Login successful. Welcome, {username_input}!\n')
         return True
