@@ -45,13 +45,13 @@ def get_public_ip_info():
 
                 #extract and print detailed geolocation information
                 loc = data.get("loc", "").split(",")
-                latitude = loc[0] if loc else "N/A"
-                longitude = loc[1] if len(loc) > 1 else "N/A"
+                latitude = loc[0] if loc else "Information Not Available"
+                longitude = loc[1] if len(loc) > 1 else "Information Not Available"
                 print(f'Latitude: {latitude}')
                 print(f'Longitude: {longitude}')
                 print(f'Geolocation: {data["city"]}, {data["region"]}, {data["country"]}')
 
-                #extraxt continent information from ipstack.com
+                #extract continent information from ipstack.com
                 continent = get_continent_info(data["ip"], ipstack_api_key)
                 print(f'Continent: {continent}')
 
@@ -63,7 +63,7 @@ def get_public_ip_info():
                 if 'asn' in data:
                     print(f'ASN: {data["asn"]}')
                 else:
-                    print('ASN: Information not available')
+                    print('ASN: Information Not Available')
 
                 #extract and print country code
                 print(f'Country Code: {data["country"]}')
