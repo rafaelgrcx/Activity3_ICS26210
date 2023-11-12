@@ -82,7 +82,7 @@ def log_ip_address(ip_address):
     with open('ip_history.txt', 'a') as file:
         file.write(f'{ip_address}\n')
     #print a message stating that the ip address is saved for history tracking
-    print('IP Address logged for history tracking.\n')
+    print('Your IP Address logged for history tracking. See ip_history.txt to see the log history \n')
 
 def get_continent_info(ip_address, api_key):
     #use ipstack.com to get continent information
