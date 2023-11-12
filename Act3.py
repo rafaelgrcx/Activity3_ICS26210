@@ -1,11 +1,11 @@
 import requests
 
 user_database = {
-    'martha': 'mrthbcy1',
-    'rain': 'rnmglq2',
-    'rafael': 'rflgrc3',
-    'gerard': 'grrdbyn4',
-    'andrew': 'ndrwclpz5'
+    'marthabacoy': 'mrthbcy11',
+    'rainmaglaqui': 'rnmglq22',
+    'rafaelgarcia': 'rflgrc33',
+    'gerardbayan': 'grrdbyn44',
+    'andrewcalupaz': 'ndrwclpz55'
 }
 
 def login():
