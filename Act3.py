@@ -13,19 +13,20 @@ def login():
     username_input = input('Enter your username: ')
     password_input = input('Enter your password: ')
 
-    #verify login credentials (user authentication)
+    #verify login credentials (for user authentication)
     if username_input in user_database and user_database[username_input] == password_input:
         print(f'Login successful. Welcome, {username_input}!\n')
         return True
     else:
         print('Login failed. Please check your credentials.\n')
         return False
-        
+
+#get geolocation information
 def get_public_ip_info():
     try:
         #user authentication
         if login():
-            # Request geolocation information from the ipinfo.io API
+            #request geolocation information from ipinfo.io API
             response = requests.get('https://ipinfo.io/json')
             ipstack_api_key = 'YOUR_IPSTACK_API_KEY'  # Replace with your actual IPStack API key
 
@@ -50,7 +51,7 @@ def get_public_ip_info():
                 print(f'Longitude: {longitude}')
                 print(f'Geolocation: {data["city"]}, {data["region"]}, {data["country"]}')
 
-                # Get continent information from ipstack.com
+                #extraxt continent information from ipstack.com
                 continent = get_continent_info(data["ip"], ipstack_api_key)
                 print(f'Continent: {continent}')
 
@@ -76,15 +77,15 @@ def get_public_ip_info():
     except Exception as e:
         print(f'An error occurred: {str(e)}')
 
+#implement IP history tracking by logging the IP address to a txt file
 def log_ip_address(ip_address):
-    #implement IP history tracking by logging the IP address to a txt file
     with open('ip_history.txt', 'a') as file:
         file.write(f'{ip_address}\n')
     #print a message stating that the ip address is saved for history tracking
     print('IP Address logged for history tracking.\n')
 
 def get_continent_info(ip_address, api_key):
-    # Use ipstack.com to get continent information
+    #use ipstack.com to get continent information
     ipstack_url = f'http://api.ipstack.com/{ip_address}?access_key={api_key}'
     response = requests.get(ipstack_url)
     
