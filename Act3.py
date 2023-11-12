@@ -10,15 +10,15 @@ user_database = {
 
 def login():
     #user input for username and password
-    username_input = input('Enter your username: ')
-    password_input = input('Enter your password: ')
+    username_input = input('Please enter your username: ')
+    password_input = input('Please enter your password: ')
 
     #verify login credentials (for user authentication)
     if username_input in user_database and user_database[username_input] == password_input:
         print(f'Login successful. Welcome, {username_input}!\n')
         return True
     else:
-        print('Login failed. Please check your credentials.\n')
+        print('Login failed. Please check your username or password.\n')
         return False
 
 #get geolocation information
